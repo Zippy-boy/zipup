@@ -1,0 +1,279 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-02-21T21:36:34.934Z",
+    "end": "2024-02-21T21:36:34.981Z",
+    "duration": 47,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "751a4307-7f29-4f32-b7de-3627fe27b168",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "26159050-2635-481e-ba26-6877ac38d84b",
+          "title": "Folder Upload zipped",
+          "fullFile": "C:\\Users\\Zippy\\Desktop\\zipup\\server-side\\tests\\upload.test.js",
+          "file": "\\tests\\upload.test.js",
+          "beforeHooks": [],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Folder Upload zipped\"",
+              "fullTitle": "Folder Upload zipped \"after all\" hook in \"Folder Upload zipped\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "app.close(); // Shutdown the Express app",
+              "err": {},
+              "uuid": "1ba68307-bfb4-464a-8b3d-24e1e60e9912",
+              "parentUUID": "26159050-2635-481e-ba26-6877ac38d84b",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should upload a zipped file successfully",
+              "fullTitle": "Folder Upload zipped should upload a zipped file successfully",
+              "timedOut": false,
+              "duration": 23,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const { expect } = await import('chai');\nconst response = await request(app)\n    .post('/upload-file')\n    .attach('folder', './tests/upload.test.zip'); // Provide the path to your test folder\nexpect(response.status).to.equal(200);\n// expect(response.text).to.equal('Folder uploaded successfully');",
+              "err": {},
+              "uuid": "c1e9ec0a-3563-40a1-b90f-0aa878360e98",
+              "parentUUID": "26159050-2635-481e-ba26-6877ac38d84b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c1e9ec0a-3563-40a1-b90f-0aa878360e98"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 23,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "413c40b3-88f4-4dd9-be09-e25b839d371b",
+          "title": "Folder Upload unzipped",
+          "fullFile": "C:\\Users\\Zippy\\Desktop\\zipup\\server-side\\tests\\upload.test.js",
+          "file": "\\tests\\upload.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should upload an open folder successfully",
+              "fullTitle": "Folder Upload unzipped should upload an open folder successfully",
+              "timedOut": false,
+              "duration": 3,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const { expect } = await import('chai');\nconst response = await request(app)\n    .post('/upload-folder')\n    .attach('folder', './tests/unzipped.test/'); // Provide the path to your test folder\nexpect(response.status).to.equal(200);\n// expect(response.text).to.equal('Folder uploaded successfully');",
+              "err": {
+                "message": "Error: Aborted",
+                "estack": "Error: Aborted\n    at Test.<anonymous> (node_modules\\superagent\\lib\\request-base.js:259:23)\n    at Test.emit (node:events:518:28)\n    at RequestBase.abort (node_modules\\superagent\\lib\\request-base.js:465:8)\n    at FormData.<anonymous> (node_modules\\superagent\\lib\\node\\index.js:284:12)\n    at FormData.emit (node:events:530:35)\n    at CombinedStream._emitError (node_modules\\combined-stream\\lib\\combined_stream.js:207:8)\n    at DelayedStream.<anonymous> (node_modules\\combined-stream\\lib\\combined_stream.js:133:10)\n    at DelayedStream.emit (node:events:530:35)\n    at DelayedStream._handleEmit (node_modules\\delayed-stream\\lib\\delayed_stream.js:82:15)\n    at source.emit (node_modules\\delayed-stream\\lib\\delayed_stream.js:29:19)\n    at emitErrorNT (node:internal/streams/destroy:169:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)",
+                "diff": null
+              },
+              "uuid": "32ce8cd9-d103-4034-9c5e-1bc14cc75157",
+              "parentUUID": "413c40b3-88f4-4dd9-be09-e25b839d371b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "32ce8cd9-d103-4034-9c5e-1bc14cc75157"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "7921b346-b178-44e5-8ef9-ce290eaa7da8",
+          "title": "Folder Unzip",
+          "fullFile": "C:\\Users\\Zippy\\Desktop\\zipup\\server-side\\tests\\upload.test.js",
+          "file": "\\tests\\upload.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should unzip the folder and save it to the 'uploads' directory",
+              "fullTitle": "Folder Unzip Should unzip the folder and save it to the 'uploads' directory",
+              "timedOut": false,
+              "duration": 10,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const { expect } = await import('chai');\nconst response = await request(app)\n    .post('/unzip-folder')\n    .send({ filename: 'upload.test.zip' });\nexpect(response.status).to.equal(200);\n// expect(response.text).to.equal('Folder unzipped successfully');",
+              "err": {},
+              "uuid": "c5e3d410-d571-4af1-9aee-95889b3e65f1",
+              "parentUUID": "7921b346-b178-44e5-8ef9-ce290eaa7da8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c5e3d410-d571-4af1-9aee-95889b3e65f1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "5d0d7192-d986-454d-86e9-07adcadf064e",
+          "title": "Folder download",
+          "fullFile": "C:\\Users\\Zippy\\Desktop\\zipup\\server-side\\tests\\upload.test.js",
+          "file": "\\tests\\upload.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should download the folder from the 'uploads' directory",
+              "fullTitle": "Folder download Should download the folder from the 'uploads' directory",
+              "timedOut": false,
+              "duration": 4,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const { expect } = await import('chai');\nconst response = await request(app)\n    .get('/download') // Use the correct filename\n    .send({ filename: 'upload.test.zip' });\n// Assert that the response status is 200 (OK)\nexpect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "413ac72b-5509-4c51-8d69-7654ba68a81d",
+              "parentUUID": "5d0d7192-d986-454d-86e9-07adcadf064e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "413ac72b-5509-4c51-8d69-7654ba68a81d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "5afb060b-cbf8-4b65-867e-6d7d1aac1896",
+          "title": "Folder delete",
+          "fullFile": "C:\\Users\\Zippy\\Desktop\\zipup\\server-side\\tests\\upload.test.js",
+          "file": "\\tests\\upload.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should delete the folder from the 'uploads' and 'unzipped' directory",
+              "fullTitle": "Folder delete Should delete the folder from the 'uploads' and 'unzipped' directory",
+              "timedOut": false,
+              "duration": 3,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const { expect } = await import('chai');\nconst response = await request(app)\n    .post('/delet')\n    .send({ filename: 'upload.test.zip' });\n\nexpect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "fe700800-cb8a-443a-96d0-172344a80b49",
+              "parentUUID": "5afb060b-cbf8-4b65-867e-6d7d1aac1896",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fe700800-cb8a-443a-96d0-172344a80b49"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.3.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
